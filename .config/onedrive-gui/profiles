@@ -1,0 +1,12 @@
+[UASLP]
+config_file = /home/israellh/.config/onedrive/accounts/UASLP/config
+auto_sync = False
+account_type = Business
+free_space = 5.0TiB
+
+[Home]
+config_file = /home/israellh/.config/onedrive/accounts/Home/config
+auto_sync = True
+account_type = Personal
+free_space = 1008.5GiB
+
