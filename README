@@ -2,3 +2,10 @@ zathura - pdf reader
 qutebrowser - browser
 kitty - terminal emulator
 sxiv - image viewer
+
+
+Awesome wm
+	battery-widget: https://github.com/deficient/battery-widget.git
+
+Tmux
+	Tmux Resurect

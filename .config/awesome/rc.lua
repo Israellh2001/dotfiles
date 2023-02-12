@@ -329,7 +329,7 @@ globalkeys = gears.table.join(
     awful.key({modkey },   "r",    
     	function ()
     		--awful.screen.focused().mypromptbox:run()
-		awful.util.spawn("dmenu_run")
+		awful.util.spawn("dmenu_run -c")
 	end,
               {description = "run dmenu", group = "launcher"}),
 
