@@ -68,16 +68,16 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
    -- awful.layout.suit.floating,
-    awful.layout.suit.tile,
+   -- awful.layout.suit.tile,
     --awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
+    --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
+    awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
+   -- awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
@@ -594,10 +594,10 @@ beautiful.useless_gap = 5
 beautiful.gap_single_client = true
 
 -- Open default applications
---awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("kmix")
 awful.spawn.with_shell("picom")
---awful.spawn.with_shell("redshift")
 
+--Set bloq mayus to esc
+awful.spawn.with_shell("setxkbmap -option caps:swapescape")

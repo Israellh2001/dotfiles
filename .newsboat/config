@@ -1,3 +1,21 @@
 refresh-on-startup yes
 display-article-progress yes
-download-full-page yes
+
+html-renderer "w3m -dump -T text/html"
+
+browser "surf -s  %u"
+
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key f pageup
+bind-key l open
+bind-key h quit
+
+macro v set browser "setsid mpv"; open-in-browser ; set browser "xdg-open"
