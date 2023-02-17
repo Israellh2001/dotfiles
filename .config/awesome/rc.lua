@@ -326,12 +326,17 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({modkey },   "r",    
+    awful.key({"Mod5" },   "r",    
     	function ()
     		--awful.screen.focused().mypromptbox:run()
 		awful.util.spawn("dmenu_run -c")
 	end,
               {description = "run dmenu", group = "launcher"}),
+    awful.key({"Mod5" },   "e",     
+         function ()
+                 awful.util.spawn("sh /home/israellh/Code/apps.sh")
+         end,
+               {description = "run a terminal app", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -363,7 +368,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({ "Mod5"    }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
