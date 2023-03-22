@@ -70,9 +70,9 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
+		PS1='\[\033[01;31m\][\h\[\033[01;31m\] \W\[\033[01;34m\]]\$\[\033[00m\] '
 	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+		PS1='\[\033[01;32m\]\u\033[01;31m\]@\h\[\033[35m\] \W\[\033[01;35m\] \$\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -81,7 +81,7 @@ if ${use_color} ; then
 	alias fgrep='fgrep --colour=auto'
 else
 	if [[ ${EUID} == 0 ]] ; then
-		# show root@ when we don't have colors
+		# show root@ when we don't' have colors
 		PS1='\u@\h \W \$ '
 	else
 		PS1='\u@\h \w \$ '
@@ -98,7 +98,7 @@ unset use_color safe_term match_lhs sh
 
 xhost +local:root > /dev/null 2>&1
 
-# Bash won't get SIGWINCH if another process is in the foreground.
+# Bash wont get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
 # http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
@@ -137,4 +137,7 @@ ex ()
 }
 set -o vi
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias octave-gui='/usr/bin/octave --gui' 
 source /home/israellh/Apps/geant/geant4-v11.0.3-install/share/Geant4-11.0.3/geant4make/geant4make.sh
+# source /home/israellh/Apps/geant/geant4-v10.7.3-install/share/Geant4-10.7.3/geant4make/geant4make.sh
+source /home/israellh/Apps/garfield/install/share/Garfield/setupGarfield.sh

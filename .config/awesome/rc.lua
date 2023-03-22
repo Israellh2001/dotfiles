@@ -67,18 +67,18 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+	 awful.layout.suit.max,
+	 awful.layout.suit.spiral,
+	 awful.layout.suit.magnifier,
    -- awful.layout.suit.floating,
    -- awful.layout.suit.tile,
-    --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.left,
+    awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
+   -- awful.layout.suit.fair,
+    --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
    -- awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
@@ -176,7 +176,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -338,6 +338,11 @@ globalkeys = gears.table.join(
          end,
                {description = "run a terminal app", group = "launcher"}),
 
+     awful.key({modkey },   "b",    
+         function ()
+                 awful.util.spawn("sh /home/israellh/Code/search.sh")
+         end,
+               {description = "Search on DuckDuckGo", group = "launcher"}),
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
@@ -602,7 +607,8 @@ beautiful.gap_single_client = true
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("kmix")
-awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom --config /home/israellh/.config/picom/picom.conf")
+awful.spawn.with_shell("lxsession")
 
 --Set bloq mayus to esc
 awful.spawn.with_shell("setxkbmap -option caps:swapescape")

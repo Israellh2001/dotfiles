@@ -8,5 +8,5 @@ free_space = 5.0TiB
 config_file = /home/israellh/.config/onedrive/accounts/Home/config
 auto_sync = True
 account_type = Personal
-free_space = 1008.5GiB
+free_space = 1.0TiB
 

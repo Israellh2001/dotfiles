@@ -3,7 +3,7 @@ display-article-progress yes
 
 html-renderer "w3m -dump -T text/html"
 
-browser "surf -s  %u"
+browser "surf -s %u > /dev/null 2>&1 &"
 
 bind-key j down
 bind-key k up
@@ -18,4 +18,5 @@ bind-key f pageup
 bind-key l open
 bind-key h quit
 
-macro v set browser "setsid mpv"; open-in-browser ; set browser "xdg-open"
+macro v set browser "setsid -f  mpv --really-quiet --no-terminal"; open-in-browser ; set browser "surf -s %u > /dev/null 2>&1 &"
+macro , open-in-browser-noninteractively
